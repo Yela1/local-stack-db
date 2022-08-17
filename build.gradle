@@ -1,0 +1,36 @@
+plugins {
+    id 'org.springframework.boot' version '2.7.2'
+    id 'io.spring.dependency-management' version '1.0.12.RELEASE'
+    id 'java'
+    id 'groovy'
+}
+
+group = 'com.study'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '1.8'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'org.springframework.boot:spring-boot-starter'
+//    implementation 'software.amazon.awssdk:aws-sdk-java:2.17.243'
+    implementation 'com.amazonaws:aws-java-sdk:1.12.239'
+    implementation 'cloud.localstack:localstack-utils:0.2.21'
+    implementation 'io.awspring.cloud:spring-cloud-aws-dependencies:2.4.2'
+    implementation 'io.awspring.cloud:spring-cloud-starter-aws-messaging:2.4.2'
+    implementation 'org.springframework.boot:spring-boot-starter-web:2.7.2'
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+
+    testImplementation 'org.codehaus.groovy:groovy-all:3.0.0'
+    testImplementation 'org.spockframework:spock-spring:2.0-groovy-3.0'
+    testImplementation 'org.spockframework:spock-core:2.0-groovy-3.0'
+    // https://projectlombok.org
+    compileOnly 'org.projectlombok:lombok:1.18.4'
+    annotationProcessor 'org.projectlombok:lombok:1.18.4'
+}
+
+test{
+    useJUnitPlatform()
+}
